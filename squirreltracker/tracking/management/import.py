@@ -2,7 +2,7 @@ import csv
 
 from django.core.management.base import BaseCommand
 
-from tracking.models import Squirrels
+from tracking.models import Squirrel
 
 
 class Command(BaseCommand):
@@ -15,7 +15,7 @@ class Command(BaseCommand):
             data = list(reader)
 
         for item in data:
-            p = Squirrels(
+            p = Squirrel(
                 X=item['X'],
                 Y=item['Y'],
                 Unique_Squirrel_ID=item['Unique Squirrel ID'],
