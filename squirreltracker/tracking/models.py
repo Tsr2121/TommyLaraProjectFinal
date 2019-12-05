@@ -67,11 +67,57 @@ class Squirrel(models.Model):
 		)
 
 
+	GRAY = 'Gray' 
+	CINNAMON = 'Cinnamon'
+	BLACK = 'Black'
+	UNRECORDED_COLOR = ''
 
 
+	PRIMARY_FUR_COLOR_CHOICES = (
+		(GRAY = 'Gray'), 
+		(CINNAMON = 'Cinnamon'), 
+		(BLACK = 'Black'), 
+		(UNRECORDED_COLOR = ''),
+		)
+
+	Primary_Fur_Color = models.CharField(
+		help_text=_('Primary Fur Color'), 
+		max_length=10, 
+		choices=PRIMARY_FUR_COLOR_CHOICES, 
+		) 
 
 
+	Highlight_Fur_Color = models.CharField(
+		help_text=_('Highlight Fur Color'), 
+		max_length=20
+		)
 
+	Combination_of_Primary_and_Highlight_Color = models.CharField(
+		help_text=_('Primary and Highlight Color'), 
+		max_length=20 
+		)
+
+	Color_Notes = models.CharField(
+		help_text=_('Color Notes'), 
+		max_length=150
+		)
+
+	GROUND_PLANE = 'Ground Plane' 
+	ABOVE_GROUND = 'Above Ground'
+	UNRECORDED_LOCATION = ''
+
+
+	LOCATION_CHOICES = (
+		(GROUND_PLANE = 'Ground Plane'), 
+		(ABOVE_GROUND = 'Above Ground'), 
+		(UNRECORDED_LOCATION = ''), 
+		)
+
+	Location = models.CharField(
+		help_text=_('Location'), 
+		max_length=25, 
+		choices=LOCATION_CHOICES, 
+		) 
 
 
 
