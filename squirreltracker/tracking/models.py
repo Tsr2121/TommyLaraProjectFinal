@@ -16,8 +16,7 @@ class Squirrel(models.Model):
 		help_text=_('Latitude'), 
 	) 
 
-	Unique_Squirrel_ID = models.UUIDField(
-	#	id = models.UUIDField(primary_key=True), 
+	Unique_Squirrel_ID = models.CharField(
 		help_text=_('Unique_ID'),
 	)
 
