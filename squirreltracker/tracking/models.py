@@ -55,8 +55,8 @@ class Squirrel(models.Model):
 
 	AGE_CHOICES = (
 		(JUVENILE, 'Juvenile'), 
-		(ADULT = 'Adult'), 
-		(UNRECORDED = ''),
+		(ADULT, 'Adult'), 
+		(UNRECORDED, ''),
 		)
 
 
@@ -74,10 +74,10 @@ class Squirrel(models.Model):
 
 
 	PRIMARY_FUR_COLOR_CHOICES = (
-		(GRAY = 'Gray'), 
-		(CINNAMON = 'Cinnamon'), 
-		(BLACK = 'Black'), 
-		(UNRECORDED_COLOR = ''),
+		(GRAY, 'Gray'), 
+		(CINNAMON, 'Cinnamon'), 
+		(BLACK, 'Black'), 
+		(UNRECORDED_COLOR, ''),
 		)
 
 	Primary_Fur_Color = models.CharField(
@@ -108,9 +108,9 @@ class Squirrel(models.Model):
 
 
 	LOCATION_CHOICES = (
-		(GROUND_PLANE = 'Ground Plane'), 
-		(ABOVE_GROUND = 'Above Ground'), 
-		(UNRECORDED_LOCATION = ''), 
+		(GROUND_PLANE, 'Ground Plane'), 
+		(ABOVE_GROUND, 'Above Ground'), 
+		(UNRECORDED_LOCATION, ''), 
 		)
 
 	Location = models.CharField(
