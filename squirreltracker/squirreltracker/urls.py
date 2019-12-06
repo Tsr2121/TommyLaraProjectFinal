@@ -24,10 +24,10 @@ Including another URLconf
 #]
 
 
-    from django.urls import path
+from django.urls import path
 
-    from . import views
+from . import views
 
-    urlpatters = [ 
-        path('', views.index, name='index'),
-    ]
+urlpatters = [ 
+    path('', views.index, name='index'),
+]
