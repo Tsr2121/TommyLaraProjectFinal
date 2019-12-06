@@ -5,9 +5,9 @@ from django.shortcuts import redirect
 from .models import Squirrel
 from .forms import PetForm
 
-def all_squirrels(request):
+def sightings(request):
 	squirrels = Squirrel.objects.all()
 	context = {
 		'squirrels': squirrels,
 	}
-	return render(request, 'squirreltracker/all.html', context)
+	return render(request, 'sightings.html', context)
