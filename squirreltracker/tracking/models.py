@@ -77,7 +77,7 @@ class Squirrel(models.Model):
 
 	Primary_Fur_Color = models.CharField(
 		help_text=_('Primary Fur Color'), 
-		max_length=10, 
+		max_length=20, 
 		#choices=PRIMARY_FUR_COLOR_CHOICES, 
 		#blank=True,
 	) 
