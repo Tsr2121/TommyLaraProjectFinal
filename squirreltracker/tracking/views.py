@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 
 from .models import Squirrel
-from .forms import PetForm
 
 def sightings(request):
 	squirrels = Squirrel.objects.all()
