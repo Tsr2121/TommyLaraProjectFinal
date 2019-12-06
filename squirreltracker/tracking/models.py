@@ -82,8 +82,6 @@ class Squirrel(models.Model):
 
 		max_length=25, 
 
-		max_length=20, 
-
 		#choices=PRIMARY_FUR_COLOR_CHOICES, 
 		#blank=True,
 	) 
@@ -123,6 +121,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Chasing = models.CharField(
@@ -131,6 +130,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Climbing = models.CharField(
@@ -139,6 +139,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Eating = models.CharField(
@@ -147,6 +148,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Foraging = models.CharField(
@@ -155,6 +157,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Other_Activities = models.CharField(
@@ -169,6 +172,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Quaas = models.CharField(
@@ -177,6 +181,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Moans = models.CharField(
@@ -185,6 +190,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Tail_flags = models.CharField(
@@ -193,6 +199,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Tail_twitches = models.CharField(
@@ -201,6 +208,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Approaches = models.CharField(
@@ -209,6 +217,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Indifferent = models.CharField(
@@ -217,6 +226,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	Runs_from = models.CharField(
@@ -225,6 +235,7 @@ class Squirrel(models.Model):
 		(FALSE, 'FALSE')),
 		default=FALSE,
 		null=True,
+		max_length=5,
 	)
 
 	
