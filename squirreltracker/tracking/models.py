@@ -19,22 +19,22 @@ class Squirrel(models.Model):
 	Unique_Squirrel_ID = models.CharField(
 		help_text=_('Unique_ID'),
 		max_length=25, 
-		blank=True,
+		#blank=True,
 	)
 
-	AM = 'AM'
-	PM = 'PM'
+	#AM = 'AM'
+	#PM = 'PM'
 
-	SHIFT_CHOICES = (
-	    (AM, 'AM'),
-	    (PM, 'PM'),
-	)
+	#SHIFT_CHOICES = (
+	    #(AM, 'AM'),
+	    #(PM, 'PM'),
+	#)
 
 	Shift = models.CharField(
 		help_text=_('Shift Interval'), 
 		max_length=10, 
-		choices=SHIFT_CHOICES, 
-		blank=True,
+		#choices=SHIFT_CHOICES, 
+		#blank=True,
 	)
 
 	Date = models.IntegerField(
@@ -42,141 +42,141 @@ class Squirrel(models.Model):
 	)
 
 
-	JUVENILE = 'Juvenile'
-	ADULT = 'Adult'
-	UNRECORDED = ''
+	#JUVENILE = 'Juvenile'
+	#ADULT = 'Adult'
+	#UNRECORDED = ''
 
 
-	AGE_CHOICES = (
-		(JUVENILE, 'Juvenile'), 
-		(ADULT, 'Adult'), 
-		(UNRECORDED, ''),
-	)
+	#AGE_CHOICES = (
+		#(JUVENILE, 'Juvenile'), 
+		#(ADULT, 'Adult'), 
+		#(UNRECORDED, ''),
+	#)
 
 
 	Age = models.CharField(
 		help_text=_('Age Group'), 
 		max_length=20, 
-		choices=AGE_CHOICES, 
-		blank=True,
+		#choices=AGE_CHOICES, 
+		#blank=True,
 	)
 
 
-	GRAY = 'Gray' 
-	CINNAMON = 'Cinnamon'
-	BLACK = 'Black'
-	UNRECORDED_COLOR = ''
+	#GRAY = 'Gray' 
+	#CINNAMON = 'Cinnamon'
+	#BLACK = 'Black'
+	#UNRECORDED_COLOR = ''
 
 
-	PRIMARY_FUR_COLOR_CHOICES = (
-		(GRAY, 'Gray'), 
-		(CINNAMON, 'Cinnamon'), 
-		(BLACK, 'Black'), 
-		(UNRECORDED_COLOR, ''),
-	)
+	#PRIMARY_FUR_COLOR_CHOICES = (
+		#(GRAY, 'Gray'), 
+		#(CINNAMON, 'Cinnamon'), 
+		#(BLACK, 'Black'), 
+		#(UNRECORDED_COLOR, ''),
+	#)
 
 	Primary_Fur_Color = models.CharField(
 		help_text=_('Primary Fur Color'), 
 		max_length=10, 
-		choices=PRIMARY_FUR_COLOR_CHOICES, 
-		blank=True,
+		#choices=PRIMARY_FUR_COLOR_CHOICES, 
+		#blank=True,
 	) 
 
 
-	GROUND_PLANE = 'Ground Plane' 
-	ABOVE_GROUND = 'Above Ground'
-	UNRECORDED_LOCATION = ''
+	#GROUND_PLANE = 'Ground Plane' 
+	#ABOVE_GROUND = 'Above Ground'
+	#UNRECORDED_LOCATION = ''
 
 
-	LOCATION_CHOICES = (
-		(GROUND_PLANE, 'Ground Plane'), 
-		(ABOVE_GROUND, 'Above Ground'), 
-		(UNRECORDED_LOCATION, ''), 
-	)
+	#LOCATION_CHOICES = (
+		#(GROUND_PLANE, 'Ground Plane'), 
+		#(ABOVE_GROUND, 'Above Ground'), 
+		#(UNRECORDED_LOCATION, ''), 
+	#)
 
 	Location = models.CharField(
 		help_text=_('Location'), 
 		max_length=25, 
-		choices=LOCATION_CHOICES, 
-		blank=True,
+		#choices=LOCATION_CHOICES, 
+		#blank=True,
 	) 
 
 
 	Specific_Location = models.CharField(
 		help_text=_('Specific Location'), 
 		max_length=150,
-		blank=True,
+		#blank=True,
 	)
 
 	Running = models.BooleanField(
 		help_text=_('Running'), 
-		default=True,
+		null=True,
 	)
 
 	Chasing = models.BooleanField(
 		help_text=_('Chasing'), 
-		default=True,
+		null=True,
 	)
 
 	Climbing = models.BooleanField(
 		help_text=_('Climbing'), 
-		default=True,
+		null=True,
 	)
 
 	Eating = models.BooleanField(
 		help_text=_('Eating'), 
-		default=True,
+		null=True,
 	)
 
 	Foraging = models.BooleanField(
 		help_text=_('Foraging'), 
-		default=True,
+		null=True,
 	)
 
 	Other_Activities = models.CharField(
 		help_text=_('Other Activities'), 
 		max_length=100,
-		blank=True,
+		#blank=True,
 	)
 
 	Kuks = models.BooleanField(
 		help_text=_('Kuks'), 
-		default=True,
+		null=True,
 	)
 
 	Quaas = models.BooleanField(
 		help_text=_('Quaas'), 
-		default=True,
+		null=True,
 	)
 
 	Moans = models.BooleanField(
 		help_text=_('Moans'), 
-		default=True,
+		null=True,
 	)
 
 	Tail_flags = models.BooleanField(
 		help_text=_('Tail flags'), 
-		default=True,
+		null=True,
 	)
 
 	Tail_twitches = models.BooleanField(
 		help_text=_('Tail twitches'), 
-		default=True,
+		null=True,
 	)
 
 	Approaches = models.BooleanField(
 		help_text=_('Approaches'), 
-		default=True,
+		null=True,
 	)
 
 	Indifferent = models.BooleanField(
 		help_text=_('Indifferent'), 
-		default=True,
+		null=True,
 	)
 
 	Runs_from = models.BooleanField(
 		help_text=_('Runs from'), 
-		default=True,
+		null=True,
 	)
 
 	
