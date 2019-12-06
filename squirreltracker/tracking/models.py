@@ -9,11 +9,13 @@ import uuid
 class Squirrel(models.Model):
 	X = models.FloatField(
 		help_text=_('Longitude'), 
+		null=True,
 
 	) 
 
 	Y = models.FloatField(
 		help_text=_('Latitude'), 
+		null=True,
 	) 
 
 	Unique_Squirrel_ID = models.CharField(
@@ -77,7 +79,7 @@ class Squirrel(models.Model):
 
 	Primary_Fur_Color = models.CharField(
 		help_text=_('Primary Fur Color'), 
-		max_length=10, 
+		max_length=25, 
 		#choices=PRIMARY_FUR_COLOR_CHOICES, 
 		#blank=True,
 	) 
@@ -108,28 +110,46 @@ class Squirrel(models.Model):
 		#blank=True,
 	)
 
-	Running = models.BooleanField(
-		help_text=_('Running'), 
+	TRUE = 'TRUE'
+	FALSE = 'FALSE'
+
+	Running = models.CharField(
+		help_text=('Running'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Chasing = models.BooleanField(
+	Chasing = models.CharField(
 		help_text=_('Chasing'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Climbing = models.BooleanField(
+	Climbing = models.CharField(
 		help_text=_('Climbing'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Eating = models.BooleanField(
+	Eating = models.CharField(
 		help_text=_('Eating'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Foraging = models.BooleanField(
+	Foraging = models.CharField(
 		help_text=_('Foraging'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
@@ -139,43 +159,67 @@ class Squirrel(models.Model):
 		#blank=True,
 	)
 
-	Kuks = models.BooleanField(
+	Kuks = models.CharField(
 		help_text=_('Kuks'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Quaas = models.BooleanField(
+	Quaas = models.CharField(
 		help_text=_('Quaas'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Moans = models.BooleanField(
+	Moans = models.CharField(
 		help_text=_('Moans'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Tail_flags = models.BooleanField(
+	Tail_flags = models.CharField(
 		help_text=_('Tail flags'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Tail_twitches = models.BooleanField(
+	Tail_twitches = models.CharField(
 		help_text=_('Tail twitches'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Approaches = models.BooleanField(
+	Approaches = models.CharField(
 		help_text=_('Approaches'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Indifferent = models.BooleanField(
+	Indifferent = models.CharField(
 		help_text=_('Indifferent'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
-	Runs_from = models.BooleanField(
+	Runs_from = models.CharField(
 		help_text=_('Runs from'), 
+		choices=((TRUE, 'TRUE'),
+		(FALSE, 'FALSE')),
+		default=FALSE,
 		null=True,
 	)
 
