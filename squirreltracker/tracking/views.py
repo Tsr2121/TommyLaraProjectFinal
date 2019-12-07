@@ -63,12 +63,35 @@ def add_squirrel(request):
 	#return Squirrel.objects.all().aggregate(Avg('X'))
 
 
-def squirrel_eating_stat(request):
-	eating_count = 0
-	for i in Squirrel.objects.all():
-		if squirrel.eating == True:
-			eating_count +=1
-	print ('Number of squirrels eating was', eating_count)
+# def squirrel_eating_stat(request):
+# 	eating_count = 0
+# 	for i in Squirrel.objects.all():
+# 		if squirrel.eating == True:
+# 			eating_count +=1
+# 	print ('Number of squirrels eating was', eating_count)
+
+
+def squirrel_stats(request):
+	squirrels = Squirrel.objects.all()
+	context = {
+		'squirrels': squirrels,
+		'fields': fields,
+	}
+	eating_stat = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
+	shift_stat = Squirrel.objects.count('Shift').order_by('Shift').annotate(shift_count=Count('Shift'))
+	moans_stat = Squirrel.objects.count('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
+	chasing_stat = Squirrel.objects.count('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
+	running_stat = Squirrel.objects.count('Running').order_by('Running').annotate(running_count=Count('Running'))
+
+	return render(request,'tracking/stats.html', context) , (eating_stat,shift_stat,moans_stat,chasing_stat,running_stat)
+
+
+
+
+
+
+
+
 
 
 
