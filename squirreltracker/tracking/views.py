@@ -4,23 +4,22 @@ from django.shortcuts import redirect
 
 from .models import Squirrel
 
-def sightings(request):
+def sightings(request,*args,**kwargs):
 	squirrels = Squirrel.objects.all()
+	fields = ['Unique_Squirrel_ID','Date','X', 'Y']
 	context = {
 		'squirrels': squirrels,
+		'fields': fields,
 	}
 	return render(request, 'tracking/sightings.html', context)
 
 
-# def squirrel_id(request, Unique_Squirrel_ID ):
-# 	squirrel = Squirrel.objects.get(id=Unique_Squirrel_ID)
-# 	return HttpResponse(squirrel.Unique_Squirrel_ID)
 
 
 
 
 
-def edit_squirrel(request, squirrel_id):
+def edit_squirrel(request, Unique_Squirrel_ID):
 	squirrel = Squirrel.objects.get(id=Unique_Squirrel_ID)
 	if request.methof == 'POST':
 		form = SquirrelForm(request.POST, instance=squirrel)
