@@ -71,27 +71,20 @@ def add_squirrel(request):
 # 	print ('Number of squirrels eating was', eating_count)
 
 
-def squirrel_stats(request,*args,**kwargs):
+
+def squirrel_stats(request):
 	squirrels = Squirrel.objects.all()
-	
-	eating_stat = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
-	shift_stat = Squirrel.objects.count('Shift').order_by('Shift').annotate(shift_count=Count('Shift'))
-	moans_stat = Squirrel.objects.count('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
-	chasing_stat = Squirrel.objects.count('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
-	running_stat = Squirrel.objects.count('Running').order_by('Running').annotate(running_count=Count('Running'))
-	fields = [eating_stat, shift_stat, moans_stat, chasing_stat, running_stat]
-	
 	context = {
 		'squirrels': squirrels,
 		'fields': fields,
-
 	}
+	eating_stat = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
+	kuks_stat = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(shift_count=Count('Kuks'))
+	moans_stat = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
+	chasing_stat = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
+	running_stat = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
 
-	return render(request,'tracking/stats.html', context) 
-
-
-
-
+	return render(request,'tracking/stats.html', context) , (eating_stat,kuks_stat,moans_stat,chasing_stat,running_stat)
 
 
 
