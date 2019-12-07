@@ -12,9 +12,9 @@ def sightings(request):
 	return render(request, 'sightings.html', context)
 
 
-def squirrel_id(request, Unique_Squirrel_ID ):
-	squirrel = Squirrel.objects.get(id=Unique_Squirrel_ID)
-	return HttpResponse(squirrel.Unique_Squirrel_ID)
+# def squirrel_id(request, Unique_Squirrel_ID ):
+# 	squirrel = Squirrel.objects.get(id=Unique_Squirrel_ID)
+# 	return HttpResponse(squirrel.Unique_Squirrel_ID)
 
 
 

@@ -6,6 +6,3 @@ class SquirrelForm(ModelForm):
     class Meta:
         model = Squirrel
         fields = '__all__'
-
-
-        
