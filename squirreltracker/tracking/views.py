@@ -9,7 +9,7 @@ def sightings(request):
 	context = {
 		'squirrels': squirrels,
 	}
-	return render(request, 'sightings.html', context)
+	return render(request, 'tracking/sightings.html', context)
 
 
 # def squirrel_id(request, Unique_Squirrel_ID ):
