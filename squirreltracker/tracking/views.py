@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import redirect
+from django.db.models import Count 
+from django.db.models import Max
+from django.db.models import Avg
 
 from .models import Squirrel
 from .forms import SquirrelForm
@@ -52,5 +55,9 @@ def add_squirrel(request):
     }
 
     return render(request, 'tracking/edit.html', context)
+
+
+def squirrel_stats(request):
+	return Squirrel.objects.all().aggregate(Avg('X'))
 
 
