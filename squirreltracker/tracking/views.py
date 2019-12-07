@@ -57,7 +57,19 @@ def add_squirrel(request):
     return render(request, 'tracking/edit.html', context)
 
 
-def squirrel_stats(request):
-	return Squirrel.objects.all().aggregate(Avg('X'))
+#def squirrel_stats(request):
+	
+
+	#return Squirrel.objects.all().aggregate(Avg('X'))
+
+
+def squirrel_eating_stat(request):
+	eating_count = 0
+	for i in Squirrel.objects.all():
+		if squirrel.eating == True:
+			eating_count +=1
+	print ('Number of squirrels eating was', eating_count)
+
+
 
 
