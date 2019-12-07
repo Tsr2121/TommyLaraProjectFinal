@@ -48,7 +48,7 @@ def add_squirrel(request):
 
     context = {
         'form': form,
-        'Unique_Squirrel_ID': Unique_Squirrel_ID,
+        'jazz': True,
     }
 
     return render(request, 'tracking/edit.html', context)
