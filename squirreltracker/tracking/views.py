@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 
 from .models import Squirrel
+from .forms import SquirrelForm
 
 def sightings(request,*args,**kwargs):
 	squirrels = Squirrel.objects.all()
@@ -16,8 +17,8 @@ def sightings(request,*args,**kwargs):
 
 
 def edit_squirrel(request, Unique_Squirrel_ID):
-	squirrel = Squirrel.objects.get(id=Unique_Squirrel_ID)
-	if request.methof == 'POST':
+	squirrel = Squirrel.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
+	if request.method == 'POST':
 		form = SquirrelForm(request.POST, instance=squirrel)
 
 		if form.is_valid():
