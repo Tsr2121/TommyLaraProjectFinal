@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'map'
 urlpatterns = [
-	path('', views.map, name='map)'),
+	path('map/', views.map, name='map'),
 	]
