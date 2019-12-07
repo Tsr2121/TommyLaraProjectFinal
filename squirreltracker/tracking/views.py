@@ -15,10 +15,6 @@ def sightings(request,*args,**kwargs):
 
 
 
-
-
-
-
 def edit_squirrel(request, Unique_Squirrel_ID):
 	squirrel = Squirrel.objects.get(id=Unique_Squirrel_ID)
 	if request.methof == 'POST':
@@ -33,9 +29,27 @@ def edit_squirrel(request, Unique_Squirrel_ID):
 
 	context = {
 		'form': form, 
-		'Unique_Squirrel_ID': Unique_Squirrel_ID,
+
 	}
 
 	return render(request, 'tracking/edit.html', context)
+
+
+def add_squirrel(request):
+    if request.method == 'POST':
+        form = SquirrelForm(request.POST)
+        # check data with form
+        if form.is_valid():
+            form.save()
+            return redirect(f'/tracking/list/')
+    else:
+        form = SquirrelForm()
+
+    context = {
+        'form': form,
+        'Unique_Squirrel_ID': Unique_Squirrel_ID,
+    }
+
+    return render(request, 'tracking/edit.html', context)
 
 
