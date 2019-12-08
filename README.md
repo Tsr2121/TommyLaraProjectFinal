@@ -18,16 +18,20 @@ We have the followings Views:
 A view that lists all the squirrel sightings with links to add and edit the sightings of the squirrels. Use /sightings to access 
 
 2. Map 
+
 A view that displays the locations of the squirrel sightings in Central Park on OpenStreets map. Use /map to access 
 
 3. Update 
+
 A view that updates a specific squirrel sighting. Add a squirrel unique ID to update the information of the squirrel. Use /sightings to access 
 
 4. Add 
+
 A view that creates a new squirrel sighting to our database. 
 
 
 5. Stats 
+
 A view that shows stats about some features on squirrel sightings. 
 Use /sightings/stats to access 
 
