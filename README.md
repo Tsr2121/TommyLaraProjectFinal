@@ -14,6 +14,7 @@ pip install -r requirements.txt
 We have the followings Views:
 
 1. Sightings 
+
 A view that lists all the squirrel sightings with links to add and edit the sightings of the squirrels. Use /sightings to access 
 
 2. Map 
