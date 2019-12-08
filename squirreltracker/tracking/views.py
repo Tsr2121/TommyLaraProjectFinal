@@ -63,28 +63,31 @@ def add_squirrel(request):
 	#return Squirrel.objects.all().aggregate(Avg('X'))
 
 
-# def squirrel_eating_stat(request):
-# 	eating_count = 0
-# 	for i in Squirrel.objects.all():
-# 		if squirrel.eating == True:
-# 			eating_count +=1
-# 	print ('Number of squirrels eating was', eating_count)
-
-
-
 def squirrel_stats(request):
 	squirrels = Squirrel.objects.all()
+	total_num = Squirrel.objects.filter(Unique_Squirrel_ID__name='37F-PM-1014-03').count()
+
+ 	#eating_count = 0
+ 	#for i in Squirrel.objects.all():
+ 		#if squirrel.eating == True:
+ 			#eating_count +=1
+ 	#print ('Number of squirrels eating was', eating_count)
+
+
+
+#def squirrel_stats(request):
+	#squirrels = Squirrel.objects.all()
 	context = {
 		'squirrels': squirrels,
-		'fields': fields,
+		'total_num': total_num,
 	}
-	eating_stat = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
-	kuks_stat = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(shift_count=Count('Kuks'))
-	moans_stat = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
-	chasing_stat = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
-	running_stat = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
-
-	return render(request,'tracking/stats.html', context) , (eating_stat,kuks_stat,moans_stat,chasing_stat,running_stat)
+	#eating_stat = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
+	#kuks_stat = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(shift_count=Count('Kuks'))
+	#moans_stat = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
+	#chasing_stat = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
+	#running_stat = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
+	return render(request,'tracking/stats.html', context)
+	#return render(request,'tracking/stats.html', context) , (eating_stat,kuks_stat,moans_stat,chasing_stat,running_stat)
 
 
 

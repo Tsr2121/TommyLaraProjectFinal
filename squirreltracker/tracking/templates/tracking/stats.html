@@ -22,7 +22,7 @@ crossorigin=""></script>
            
    <ul>
       {% for squirrel in squirrels %}
-        <li>{{ squirrel.eating_stat }}</li>
+        <li>{{ squirrel.total_num}}</li>
         
       {% endfor %}
   </ul> 
@@ -48,8 +48,7 @@ crossorigin=""></script>
 </html>
 
 
-
-<h1>General Statistics</h1>
+<!-- <h1>General Statistics</h1>
 
 <table style="width:30">
   <caption>Eating Statistics</caption>
@@ -65,7 +64,13 @@ crossorigin=""></script>
   </tr>
   {% endfor %}
 </table>
+ -->
 
+  <ul>
+      {% for number in total_num %}
+        <li>{{ number }}</li>
+      {% endfor %}
+  </ul> 
 
 
 
