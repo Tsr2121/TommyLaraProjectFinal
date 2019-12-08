@@ -65,7 +65,7 @@ def add_squirrel(request):
 
 def squirrel_stats(request):
 	squirrels = Squirrel.objects.all()
-	total_num = Squirrel.objects.filter(Unique_Squirrel_ID__name='37F-PM-1014-03').count()
+	total_num = Squirrel.objects.annotate(Count('Unique_Squirrel_ID'))
 
  	#eating_count = 0
  	#for i in Squirrel.objects.all():
