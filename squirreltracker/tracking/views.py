@@ -84,7 +84,7 @@ def squirrel_stats(request):
 	moans_count = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
 	chasing_count = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
 	running_count = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
-
+	results = [eating_count, kuks_count, moans_count, chasing_count, running_count]
 	
 
 
@@ -95,6 +95,7 @@ def squirrel_stats(request):
 		'moans_count': moans_count,
 		'chasing_count': chasing_count,
 		'running_count': running_count,
+		'results': results,
 
 		
 	}

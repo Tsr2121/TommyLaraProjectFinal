@@ -5,5 +5,11 @@
         <li>{{ moans_count }}</li>
         <li>{{ chasing_count }}</li>
         <li>{{ running_count }}</li>
-
+        <table>
+  			{% for r in results %}
+    			{% cycle '<tr>' '' '' '' %}
+      			<td>{{r.content}}</td>
+    			{% cycle '' '' '' '</tr>' %}
+  			{% endfor %}
+		</table>
   </ul> 
