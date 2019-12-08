@@ -93,7 +93,7 @@ def squirrel_stats(request):
 		'eating_count': eating_count,
 		'kuks_count': kuks_count,
 		'moans_count': moans_count,
-		'chasing': chasing_count,
+		'chasing_count': chasing_count,
 		'running_count': running_count,
 
 		
