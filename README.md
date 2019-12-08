@@ -7,7 +7,9 @@ The user can add, edit and view some statistics on squirrel sightings. The user 
 ### **To Install Dependencies**
 
 ```python
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### **Views**
+
+
