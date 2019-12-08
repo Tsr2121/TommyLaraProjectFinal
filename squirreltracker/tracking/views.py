@@ -68,10 +68,10 @@ def squirrel_stats(request):
 	#total_num = Squirrel.objects.all().aggregate(Avg('Date'))
     
 
-	eating_count=0
-	for i in Squirrel.objects.all():
- 		if i.Eating == True:
- 			eating_count+=1
+	#eating_count=0
+	#for i in Squirrel.objects.all():
+ 		#if i.Eating == True:
+ 			#eating_count+=1
 
  	#print ('Number of squirrels eating was', eating_count)
 
@@ -79,22 +79,27 @@ def squirrel_stats(request):
 
 #def squirrel_stats(request):
 	#squirrels = Squirrel.objects.all()
+	eating_count = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
+	kuks_count = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(shift_count=Count('Kuks'))
+	moans_count = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
+	chasing_count = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
+	running_count = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
+
+	
+
+
 	context = {
 		#'squirrels': squirrels,
 		'eating_count': eating_count,
+		'kuks_count': kuks_count,
+		'moans_count': moans_count,
+		'chasing': chasing_count,
+		'running_count': running_count,
+
 		
 	}
 	
-	#kuks_stat = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(shift_count=Count('Kuks'))
-	#moans_stat = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
-	#chasing_stat = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
-	#running_stat = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
 	return render(request,'tracking/stats.html', context)
-	#return render(request,'tracking/stats.html', context) , (eating_stat,kuks_stat,moans_stat,chasing_stat,running_stat)
-
-
-
-
 
 
 
