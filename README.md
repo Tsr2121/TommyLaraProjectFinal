@@ -10,6 +10,10 @@ The user can add, edit and view some statistics on squirrel sightings. The user 
 pip install -r requirements.txt
 ```
 
+### **App Name**
+
+Our Project's name is squirreltracker and our App's name is tracking
+
 ### **Views**
 We have the followings Views:
 
@@ -20,7 +24,7 @@ A view that lists all the squirrel sightings with links to add and edit the sigh
 
 2. *Map* 
 
-A view that displays the locations of the squirrel sightings in Central Park on OpenStreets map. Use /map to access 
+A view that displays the locations of the squirrel sightings in Central Park on OpenStreets map. Use /map to access. We have limited the showings of sightings to 50 to not freeze the server. 
 
 
 3. *Update*
