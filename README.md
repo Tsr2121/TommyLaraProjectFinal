@@ -13,34 +13,45 @@ pip install -r requirements.txt
 ### **Views**
 We have the followings Views:
 
-1. Sightings 
+1. *Sightings* 
 
 A view that lists all the squirrel sightings with links to add and edit the sightings of the squirrels. Use /sightings to access 
 
-2. Map 
+
+2. *Map* 
 
 A view that displays the locations of the squirrel sightings in Central Park on OpenStreets map. Use /map to access 
 
-3. Update 
 
-A view that updates a specific squirrel sighting. Add a squirrel unique ID to update the information of the squirrel. Use /sightings to access 
+3. *Update*
 
-4. Add 
-
-A view that creates a new squirrel sighting to our database. 
+A view that updates a specific squirrel sighting. Add a squirrel unique ID to update the information of the squirrel. Use /sightings to access and click link of specific squirrel
 
 
-5. Stats 
+4. *Add* 
+
+A view that creates a new squirrel sighting to our database. Use /sightings/add
+
+
+5. *Stats* 
 
 A view that shows stats about some features on squirrel sightings. 
 Use /sightings/stats to access 
+
 
 ### **Group Name and Section**
 Group 58, Section 1 
 
 
+### **Group Members**
+Lara Vartanian (lvv2105), Tommy Rothman (tsr2121), Xuefeil Li (xl2915)
+
+
 ### **UNI**
-UNIs: [lvv2105, tsr2121, ef9873]
+UNIs: [lvv2105, tsr2121, xl2915]
 
 
 ### **Link to the server**
+
+
+
