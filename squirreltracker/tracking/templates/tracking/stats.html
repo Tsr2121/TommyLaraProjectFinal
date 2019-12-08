@@ -1,15 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <h1 class="Sightings">Sighting Stats: How many squirrels are...?</h1>
+      <title>Sighting Stats</title>
+      <style>
+      table, td, th { 
+      padding: 10px; 
+      border: 2px solid #1c87c9;
+      border-radius: 5px;
+      background-color: #e5e5e5;
+      text-align: center;
+      }
+    </style>
+    </head>
+        <body>
+          <table>
+            <tr>
+              <th>not eating</th>
+              <th>eating</th>
+              <th>not kuks</th>
+              <th>kuks</th>
+              <th>not moan</th>
+              <th>moan</th>
+              <th>not chasing</th>
+              <th>chasing</th>
+              <th>not running</th>
+              <th>running</th>
+                <tr>
+ 
+                  <td>{{ not_eating }}</td>
+                  <td>{{ eating }}</td>
+                  <td>{{ not_kuks }}</td>
+                  <td>{{ kuks }}</td>
+                  <td>{{ not_moan }}</td>
+                  <td>{{ moan }}</td>
+                  <td>{{ not_chasing }}</td>
+                  <td>{{ chasing }}</td>
+                  <td>{{ not_running }}</td>
+                  <td>{{ running }}</td>
 
-  <ul>
-  		<li>{{ eating_count }}</li>
-        <li>{{ kuks_count }}</li>
-        <li>{{ moans_count }}</li>
-        <li>{{ chasing_count }}</li>
-        <li>{{ running_count }}</li>
-        <table>
-  			{% for r in results %}
-    			{% cycle '<tr>' '' '' '' %}
-      			<td>{{r.content}}</td>
-    			{% cycle '' '' '' '</tr>' %}
-  			{% endfor %}
-		</table>
-  </ul> 
+                </tr>
+
+          </table>
+        </body>

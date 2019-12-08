@@ -65,37 +65,40 @@ def add_squirrel(request):
 
 def squirrel_stats(request):
 	squirrels = Squirrel.objects.all()
-	#total_num = Squirrel.objects.all().aggregate(Avg('Date'))
-    
-
-	#eating_count=0
-	#for i in Squirrel.objects.all():
- 		#if i.Eating == True:
- 			#eating_count+=1
-
- 	#print ('Number of squirrels eating was', eating_count)
-
- 	#eating_stat = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
-
-#def squirrel_stats(request):
-	#squirrels = Squirrel.objects.all()
+	
 	eating_count = Squirrel.objects.values('Eating').order_by('Eating').annotate(eating_count=Count('Eating'))
-	kuks_count = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(shift_count=Count('Kuks'))
+	kuks_count = Squirrel.objects.values('Kuks').order_by('Kuks').annotate(kuks_count=Count('Kuks'))
 	moans_count = Squirrel.objects.values('Moans').order_by('Moans').annotate(moans_count=Count('Moans'))
 	chasing_count = Squirrel.objects.values('Chasing').order_by('Chasing').annotate(chasing_count=Count('Chasing'))
 	running_count = Squirrel.objects.values('Running').order_by('Running').annotate(running_count=Count('Running'))
-	results = [eating_count, kuks_count, moans_count, chasing_count, running_count]
-	
+	not_eating = eating_count[0]['eating_count']
+	eating = eating_count[1]['eating_count']
+	not_kuks = kuks_count[0]['kuks_count']
+	kuks = kuks_count[1]['kuks_count']
+	not_moan = moans_count[0]['moans_count']
+	moan = moans_count[1]['moans_count']
+	not_chasing = chasing_count[0]['chasing_count']
+	chasing = chasing_count[1]['chasing_count']
+	not_running = running_count[0]['running_count']
+	running = running_count[1]['running_count']
 
 
 	context = {
-		#'squirrels': squirrels,
 		'eating_count': eating_count,
 		'kuks_count': kuks_count,
 		'moans_count': moans_count,
 		'chasing_count': chasing_count,
 		'running_count': running_count,
-		'results': results,
+		'not_eating': not_eating,
+		'eating': eating,
+		'not_kuks': not_kuks,
+		'kuks': kuks,
+		'not_moan': not_moan,
+		'moan': moan,
+		'not_chasing': not_chasing,
+		'chasing': chasing,
+		'not_running': not_running,
+		'running': running,
 
 		
 	}
