@@ -62,5 +62,7 @@ Public Git Clone with HTTPS: https://github.com/Tsr2121/TommyLaraProjectFinal.gi
 
 ### **Link to the server**
 
+Link: https://tommy-lara-amy-tfa-project.appspot.com
+* Add /sightings or /map to see
 
 
