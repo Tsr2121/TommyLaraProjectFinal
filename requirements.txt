@@ -7,12 +7,12 @@ conda==4.7.11
 conda-build==3.4.1
 conda-package-handling==1.3.11
 conda-verify==2.0.0
-Django==3.0
+Django==2.2.7
 geojsonio==0.0.3
 github3.py==1.3.0
 odo==0.5.1
 olefile==0.45.1
-openpyxl==2.4.10
+openpxl==2.4.10
 packaging==16.8
 pandas==0.25.1
 pandas-datareader==0.8.1
